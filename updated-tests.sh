@@ -42,7 +42,7 @@ else
 fi
 
 echo -e "\nTesting :: Testing memory leaks\n"
-g++ -fsanitize=address,undefined buggy buggy.cpp
+g++ -fsanitize=address,undefined -o buggy buggy.cpp
 if  ./buggy; then 
     echo -e "  ${GREEN}Passed${NC}"
     SCORE=$(($SCORE+33))
